@@ -1,1 +1,1 @@
-# resourseManagement
+# resourceManagement
