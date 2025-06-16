@@ -8,11 +8,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import jakarta.transaction.Transactional;
 
-public class Conection {
-    private static Conection instance;
+public class Connection {
+    private static Connection instance;
     private JdbcTemplate template;
 
-    private Conection() {
+    private Connection() {
         DriverManagerDataSource data = new DriverManagerDataSource();
         data.setDriverClassName("org.postgresql.Driver");
         data.setUrl("");
@@ -42,9 +42,9 @@ public class Conection {
         }
     }
 
-    public static Conection getInstance() {
+    public static Connection getInstance() {
         if(instance == null) {
-            instance = new Conection();
+            instance = new Connection();
         }
         return instance;
     }
