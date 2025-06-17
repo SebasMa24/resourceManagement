@@ -5,7 +5,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "InfoSpacesType")
+@Table(name = "SpaceType")
 public class InfoSpacesType {
 
     @Id
