@@ -2,8 +2,6 @@ package com.quantumdev.integraservicios.resourceManagement.Models;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -21,7 +19,6 @@ public class InfoSpaces {
 
     @Id
     @Column(name = "code_space", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Short code_space;
 
     @Column(name = "building_space", nullable = false)
@@ -38,36 +35,4 @@ public class InfoSpaces {
     private String schedule_space;
     @Column(name = "desc_space", length = 64, nullable = false)
     private String desc_space;
-
-    public Short getCode_space() {
-        return code_space;
-    }
-
-    public Short getBuilding_space() {
-        return building_space;
-    }
-
-    public String getType_space() {
-        return type_space;
-    }
-
-    public String getState_space() {
-        return state_space;
-    }
-
-    public String getName_space() {
-        return name_space;
-    }
-
-    public Short getCapacity_space() {
-        return capacity_space;
-    }
-
-    public String getSchedule_space() {
-        return schedule_space;
-    }
-
-    public String getDesc_space() {
-        return desc_space;
-    }
 }

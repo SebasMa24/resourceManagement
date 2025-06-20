@@ -7,9 +7,10 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoSpacesType;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
-import com.quantumdev.integraservicios.resourceManagement.repositories.SpacesRepository;
-import com.quantumdev.integraservicios.resourceManagement.repositories.TypeSpacesRepository;
+import com.quantumdev.integraservicios.resourceManagement.Repositories.SpacesRepository;
+import com.quantumdev.integraservicios.resourceManagement.Repositories.TypeSpacesRepository;
 
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -18,10 +19,12 @@ public class SpaceService {
     private final SpacesRepository spacesRepository;
     private final TypeSpacesRepository typeSpacesRepository;
 
+    @Transactional
     public MessageResponse saveSpace(SpaceRequest info) {
 
         InfoSpaces infoSpaces = InfoSpaces.builder()
             .building_space(info.getBuilding_space())
+            .code_space(info.getCode_space())
             .type_space(info.getType_space())
             .state_space(info.getState_space())
             .name_space(info.getName_space())
@@ -41,8 +44,8 @@ public class SpaceService {
         }
 
         InfoSpacesType infoSpacesType = InfoSpacesType.builder()
-            .name_spaceType(info.getName_spaceType())
-            .desc_spaceType(info.getDesc_spaceType())
+            .name(info.getName_spaceType())
+            .desc(info.getDesc_spaceType())
             .build();
 
         typeSpacesRepository.save(infoSpacesType);

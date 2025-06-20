@@ -15,20 +15,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "HardwareType")
+@Table(name = "hardwaretype")
 public class InfoHardwareType {
 
     @Id
-    @Column(name = "name_hardwareType", length = 32, nullable = false)
-    private String name_hardwareType;
-    @Column(name = "desc_hardwareType", length = 64, nullable = false)
-    private String desc_hardwareType;
-
-    public String getName_hardwareType() {
-        return name_hardwareType;
-    }
-
-    public String getDesc_hardwareType() {
-        return desc_hardwareType;
-    }
+    @Column(name = "name_hardwaretype", length = 32, nullable = false)
+    private String name;
+    @Column(name = "desc_hardwaretype", length = 64, nullable = false)
+    private String desc;
 }

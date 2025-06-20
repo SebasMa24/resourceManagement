@@ -14,21 +14,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "SpaceType")
+@Table(name = "spacetype")
 public class InfoSpacesType {
 
     @Id
-    @Column(name = "name_spaceType", length = 32, nullable = false)
-    private String name_spaceType;
-    @Column(name = "desc_spaceType", length = 64, nullable = false)
-    private String desc_spaceType;
-
-
-    public String getName_spaceType() {
-        return name_spaceType;
-    }
-
-    public String getDesc_spaceType() {
-        return desc_spaceType;
-    }
+    @Column(name = "name_spacetype", length = 32, nullable = false)
+    private String name;
+    @Column(name = "desc_spacetype", length = 64, nullable = false)
+    private String desc;
 }

@@ -23,8 +23,8 @@ public class SecurityConfig {
                 return http
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("//hardware", "/spaces").permitAll()
-                    .anyRequest().hasAuthority("ADMIN")
+                    //.requestMatchers("//hardware", "/spaces").permitAll()
+                    .anyRequest().permitAll()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

@@ -29,24 +29,4 @@ public class InfoHardware {
     private String scheduleHardware;
     @Column(name = "descHardware", length = 64, nullable = false)
     private String descHardware;
-
-    public Long getCodeHardware() {
-        return codeHardware;
-    }
-
-    public String getTypeHardware() {
-        return typeHardware;
-    }
-
-    public String getNameHardware() {
-        return nameHardware;
-    }
-
-    public String getScheduleHardware() {
-        return scheduleHardware;
-    }
-
-    public String getDescHardware() {
-        return descHardware;
-    }
 }

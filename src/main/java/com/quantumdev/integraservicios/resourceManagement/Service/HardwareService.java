@@ -7,8 +7,8 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoHardwareTyp
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
-import com.quantumdev.integraservicios.resourceManagement.repositories.HardwareRepository;
-import com.quantumdev.integraservicios.resourceManagement.repositories.TypeHardwareRepository;
+import com.quantumdev.integraservicios.resourceManagement.Repositories.HardwareRepository;
+import com.quantumdev.integraservicios.resourceManagement.Repositories.TypeHardwareRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -40,8 +40,8 @@ public class HardwareService {
         }
 
         InfoHardwareType infoHardwareType = InfoHardwareType.builder()
-            .name_hardwareType(info.getName_hardwareType())
-            .desc_hardwareType(info.getDesc_hardwareType())
+            .name(info.getName_hardwareType())
+            .desc(info.getDesc_hardwareType())
             .build();
 
         typeHardwareRepository.save(infoHardwareType);

@@ -1,4 +1,4 @@
-package com.quantumdev.integraservicios.resourceManagement.repositories;
+package com.quantumdev.integraservicios.resourceManagement.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
