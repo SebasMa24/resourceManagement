@@ -7,8 +7,8 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoSpacesType;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
-import com.quantumdev.integraservicios.resourceManagement.Repositories.SpacesRepository;
-import com.quantumdev.integraservicios.resourceManagement.Repositories.TypeSpacesRepository;
+import com.quantumdev.integraservicios.resourceManagement.repositories.SpacesRepository;
+import com.quantumdev.integraservicios.resourceManagement.repositories.TypeSpacesRepository;
 
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;

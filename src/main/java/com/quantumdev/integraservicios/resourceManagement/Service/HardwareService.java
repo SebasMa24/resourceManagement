@@ -7,8 +7,8 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoHardwareTyp
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
-import com.quantumdev.integraservicios.resourceManagement.Repositories.HardwareRepository;
-import com.quantumdev.integraservicios.resourceManagement.Repositories.TypeHardwareRepository;
+import com.quantumdev.integraservicios.resourceManagement.repositories.HardwareRepository;
+import com.quantumdev.integraservicios.resourceManagement.repositories.TypeHardwareRepository;
 
 import lombok.RequiredArgsConstructor;
 
