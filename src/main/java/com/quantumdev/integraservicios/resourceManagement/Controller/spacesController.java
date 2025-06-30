@@ -31,7 +31,7 @@ public class spacesController {
         return ResponseEntity.ok(spaceService.saveSpaceType(body));
     }
 
-    @GetMapping("/listSpaces")
+    @GetMapping("/listTypeSpace")
     public ResponseEntity<SpaceTypeResponse> editSpaces() {
         return ResponseEntity.ok(spaceService.getSpaces());
     }
