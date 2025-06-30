@@ -33,7 +33,7 @@ public class spacesController {
     }
 
     @GetMapping("/listTypeSpace")
-    public ResponseEntity<SpaceTypeResponse> listSpaces() {
+    public ResponseEntity<SpaceTypeResponse> listTypeSpaces() {
         return ResponseEntity.ok(spaceService.getSpaces());
     }
 
