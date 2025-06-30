@@ -7,6 +7,7 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoSpacesType;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
+import com.quantumdev.integraservicios.resourceManagement.Models.Response.SpaceTypeResponse;
 import com.quantumdev.integraservicios.resourceManagement.repositories.SpacesRepository;
 import com.quantumdev.integraservicios.resourceManagement.repositories.TypeSpacesRepository;
 
@@ -51,5 +52,9 @@ public class SpaceService {
         typeSpacesRepository.save(infoSpacesType);
 
         return MessageResponse.builder().message("Se registro el tipo de hardware con exito").build();
+    }
+
+    public SpaceTypeResponse getSpaces() {
+        return SpaceTypeResponse.builder().data(typeSpacesRepository.findAll()).build();
     }
 }

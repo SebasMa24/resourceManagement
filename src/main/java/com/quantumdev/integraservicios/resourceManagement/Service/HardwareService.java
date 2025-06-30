@@ -6,6 +6,7 @@ import com.quantumdev.integraservicios.resourceManagement.Models.InfoHardware;
 import com.quantumdev.integraservicios.resourceManagement.Models.InfoHardwareType;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareTypeRequest;
+import com.quantumdev.integraservicios.resourceManagement.Models.Response.HardwareTypeResponse;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
 import com.quantumdev.integraservicios.resourceManagement.repositories.HardwareRepository;
 import com.quantumdev.integraservicios.resourceManagement.repositories.TypeHardwareRepository;
@@ -47,5 +48,9 @@ public class HardwareService {
         typeHardwareRepository.save(infoHardwareType);
 
         return MessageResponse.builder().message("Se registro el tipo de espacio con exito").build();
+    }
+
+    public HardwareTypeResponse getTypeHardware() {
+        return HardwareTypeResponse.builder().data(typeHardwareRepository.findAll()).build();
     }
 }

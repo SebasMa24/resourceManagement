@@ -1,6 +1,7 @@
 package com.quantumdev.integraservicios.resourceManagement.Controller;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.HardwareTypeRequest;
+import com.quantumdev.integraservicios.resourceManagement.Models.Response.HardwareTypeResponse;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
 import com.quantumdev.integraservicios.resourceManagement.Service.HardwareService;
 
@@ -29,8 +31,8 @@ public class hardwareController {
         return ResponseEntity.ok(hardwareService.saveHardwareType(body));
     }
     
-    /**@PostMapping("/editHardware")
-    public ResponseEntity<Map<String, Object>> editHardware(@RequestBody InfoHardware body) {
-        
-    }**/
+    @GetMapping("/listTypeHardware")
+    public ResponseEntity<HardwareTypeResponse> editHardware() {
+        return ResponseEntity.ok(hardwareService.getTypeHardware());
+    }
 }
