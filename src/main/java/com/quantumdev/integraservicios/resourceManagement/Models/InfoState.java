@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "State")
 public class InfoState {
     @Id
     @Column(name = "name_state", length = 32, nullable = false)
