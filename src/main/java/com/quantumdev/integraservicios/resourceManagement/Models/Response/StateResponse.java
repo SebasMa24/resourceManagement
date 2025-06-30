@@ -2,7 +2,7 @@ package com.quantumdev.integraservicios.resourceManagement.Models.Response;
 
 import java.util.List;
 
-import com.quantumdev.integraservicios.resourceManagement.Models.InfoSpacesType;
+import com.quantumdev.integraservicios.resourceManagement.Models.InfoState;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -13,6 +13,6 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class SpaceTypeResponse {
-    List<InfoSpacesType> data;
+public class StateResponse {
+    List<InfoState> data;
 }

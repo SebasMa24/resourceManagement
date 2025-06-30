@@ -11,6 +11,7 @@ import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceRe
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.SpaceTypeResponse;
+import com.quantumdev.integraservicios.resourceManagement.Models.Response.StateResponse;
 import com.quantumdev.integraservicios.resourceManagement.Service.SpaceService;
 
 import lombok.RequiredArgsConstructor;
@@ -32,7 +33,12 @@ public class spacesController {
     }
 
     @GetMapping("/listTypeSpace")
-    public ResponseEntity<SpaceTypeResponse> editSpaces() {
+    public ResponseEntity<SpaceTypeResponse> listSpaces() {
         return ResponseEntity.ok(spaceService.getSpaces());
+    }
+
+    @GetMapping("/listStates")
+    public ResponseEntity<StateResponse> listStates() {
+        return ResponseEntity.ok(spaceService.getStates());
     }
 }

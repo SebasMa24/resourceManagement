@@ -32,7 +32,7 @@ public class hardwareController {
     }
     
     @GetMapping("/listTypeHardware")
-    public ResponseEntity<HardwareTypeResponse> editHardware() {
+    public ResponseEntity<HardwareTypeResponse> listHardware() {
         return ResponseEntity.ok(hardwareService.getTypeHardware());
     }
 }

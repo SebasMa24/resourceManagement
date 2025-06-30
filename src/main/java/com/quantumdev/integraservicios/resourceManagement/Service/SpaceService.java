@@ -8,7 +8,9 @@ import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceRe
 import com.quantumdev.integraservicios.resourceManagement.Models.Request.SpaceTypeRequest;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.MessageResponse;
 import com.quantumdev.integraservicios.resourceManagement.Models.Response.SpaceTypeResponse;
+import com.quantumdev.integraservicios.resourceManagement.Models.Response.StateResponse;
 import com.quantumdev.integraservicios.resourceManagement.repositories.SpacesRepository;
+import com.quantumdev.integraservicios.resourceManagement.repositories.StateRepository;
 import com.quantumdev.integraservicios.resourceManagement.repositories.TypeSpacesRepository;
 
 import jakarta.transaction.Transactional;
@@ -19,6 +21,7 @@ import lombok.RequiredArgsConstructor;
 public class SpaceService {
     private final SpacesRepository spacesRepository;
     private final TypeSpacesRepository typeSpacesRepository;
+    private final StateRepository stateRepository;
 
     @Transactional
     public MessageResponse saveSpace(SpaceRequest info) {
@@ -56,5 +59,9 @@ public class SpaceService {
 
     public SpaceTypeResponse getSpaces() {
         return SpaceTypeResponse.builder().data(typeSpacesRepository.findAll()).build();
+    }
+
+    public StateResponse getStates() {
+        return StateResponse.builder().data(stateRepository.findAll()).build();
     }
 }
