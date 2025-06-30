@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "spacetype")
+@Table(name = "Spacetype")
 public class InfoSpacesType {
 
     @Id

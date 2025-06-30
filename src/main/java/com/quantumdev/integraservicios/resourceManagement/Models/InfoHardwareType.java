@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "hardwaretype")
+@Table(name = "Hardwaretype")
 public class InfoHardwareType {
 
     @Id
