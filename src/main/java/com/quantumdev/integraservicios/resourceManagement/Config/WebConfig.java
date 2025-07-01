@@ -1,32 +1,17 @@
 package com.quantumdev.integraservicios.resourceManagement.Config;
 
-import java.util.List;
-
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.core.env.Environment;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-
-import lombok.RequiredArgsConstructor;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
-@RequiredArgsConstructor
-public class WebConfig {
-
-    private final Environment environment;
-
-    @Bean
-    public CorsConfigurationSource corsConfigurationSource() {
-        return request -> {
-            var configuration = new CorsConfiguration();
-            configuration.setAllowedOrigins(List.of(environment.getProperty("frontend.url")));
-            configuration.setAllowedMethods(List.of("GET", "OPTIONS"));
-            configuration.setAllowedHeaders(List.of("Authorization"));
-            configuration.setAllowCredentials(true);
-
-            return configuration;
-        };
+public class WebConfig implements WebMvcConfigurer{
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:5173") 
+                .allowedMethods("GET", "POST", "PUT", "DELETE")
+                .allowedHeaders("*")  
+                .allowCredentials(true);
     }
-
 }
